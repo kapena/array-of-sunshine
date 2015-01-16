@@ -25,7 +25,7 @@ describe('.spliceString', function() {
     expect(spliceString).to.be.a('function');
   });
   it('should return the modified string', function() {
-    spliceString('Happy Halloween', 'y').should.equal('nHappy Halloweenye');
+    spliceString('Happy Halloween', 'y').should.equal('nHappy Halloweye');
     spliceString('Hocus Pocus', 'r').should.equal('sHocus Pocru');
   });
 });

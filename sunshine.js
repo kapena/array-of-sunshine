@@ -12,8 +12,6 @@ var myReverse = convert.reverse().join("");
  return myReverse;
 }
 
-reverseString();
-
 /**
   Write a function that takes two parameters as input in the order
   of string, character. 
@@ -49,7 +47,6 @@ function spliceString(str, char) {
 
   strArray.splice(-1, 0,char);
   return strArray.join("");
-  //alert(strArray);
 }
 
 /**
@@ -59,6 +56,17 @@ function spliceString(str, char) {
   Note: For now, do not worry about words like "chicken".
   Instead of "ickenchay", it should just become "hickencay".
 */
-function speakPigLatin(strArray) {
 
+
+function speakPigLatin(strArray) {
+  return strArray.map(function (wordz) {
+  // turning a string into an array inside of map.
+  var newwordz = wordz.split("");
+  // removing first letter of wordz
+  var removeFirstLetter = newwordz.shift();
+  // passing in removeFirstLetter to newwordz and then adding the phrase "ay" to newwordz
+  newwordz.push(removeFirstLetter,"ay");
+  // joining everything we added to the newwordz variable
+  return newwordz.join("");
+  });
 }
