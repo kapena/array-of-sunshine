@@ -5,19 +5,51 @@
   Bonus: Use RegEx to create the array
 */
 function reverseString(str) {
-
+  // turn a string into an array and split. 
+  var convert = str.split("");
+  // reverse array and convert back into a string with join.
+var myReverse = convert.reverse().join("");
+ return myReverse;
 }
+
+reverseString();
 
 /**
   Write a function that takes two parameters as input in the order
-  of string, character. With the first string parameter use Array
-  functionality remove the last character and put it at the beginning
-  of the array. Then insert the character passed in the second
+  of string, character. 
+
+  With the first string parameter use Array
+  functionality. 
+
+  Remove the last character and put it at the beginning
+  of the array. 
+
+  Then insert the character passed in the second
   parameter into the second to last position of the array.
   Then convert the array to a string and return it.
 */
-function spliceString(str, char) {
 
+function spliceString(str, char) {
+  // Array functionality turns a string into an array. 
+  // Splitting changes an array into string
+  var strArray = str.split("");
+
+  // Pop takes the value off the end of the array. 
+  // Then replace catches the poped array . 
+  // Unshift adds what was passed to it at the begging of the array. 
+  // replace was passed to .unshift()
+
+  var replace = strArray.pop();
+  strArray.unshift(replace);
+
+  // splice changes the content of an array by removing existing elements
+  // -1 is the end of the array 
+  // 0 is saying how many characters we are cutting. 
+  // strArray is adding "char" to my array through the function
+
+  strArray.splice(-1, 0,char);
+  return strArray.join("");
+  //alert(strArray);
 }
 
 /**
